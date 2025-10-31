@@ -3,11 +3,14 @@
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
+-- Proper colors (I think true was the default too)
+vim.opt.termguicolors = true
+
 -- Make line numbers default
 vim.o.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.o.relativenumber = true
+vim.o.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = 'a'
@@ -25,6 +28,19 @@ end)
 
 -- Enable break indent
 vim.o.breakindent = true
+vim.o.smartindent = true -- NOTE: Currently testing.
+
+-- Set default tab width and space behaviors
+-- Note that these will be overridden in individual buffers by guess-indent,
+-- but setting reasonable defaults here means that newly created files will
+-- start with sensible defaults.
+local tabsize = 2
+vim.o.expandtab = true
+vim.o.shiftwidth = tabsize
+vim.o.tabstop = tabsize
+
+-- Ensure that wrapping lines don't split words
+vim.o.linebreak = true
 
 -- Save undo history
 vim.o.undofile = true
@@ -42,11 +58,12 @@ vim.o.updatetime = 250
 -- Decrease mapped sequence wait time
 vim.o.timeoutlen = 300
 
+-- How to show autocomplete menu
+vim.opt.completeopt = 'menuone,noinsert,popup' --NOTE: Currently testing, previously "menu,popup"
+
 -- Configure how new splits should be opened
 vim.o.splitright = true
 vim.o.splitbelow = true
-
--- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 --

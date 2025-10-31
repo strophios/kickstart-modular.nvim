@@ -208,7 +208,30 @@ return {
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
+        ruff = {}, -- Python linter and formatter (by Astral, of uv)
+        ty = {}, -- Python LSP by Astral (of uv and ruff)
+        marksman = { -- Markdown LSP -- NOTE: We're probably ultimately going with a more full featured alternative (e.g., otter.nvim)
+          filetypes = { 'markdown', 'rmarkdown', 'rmd', 'quarto' },
+          root_markers = { '.marksman.toml', '_quarto.yml', '.git' },
+        },
+        r_language_server = { -- R LSP; note that I may want/need more configuration (see the blog post above if needed)
+          cmd = { 'R', '--no-echo', '-e', 'languageserver::run()' },
+          filetypes = { 'r' },
+        },
         -- clangd = {},
+        bashls = {}, -- For if I'm doing bash scripting (and not using nushell)
+        -- Note that this is not a zsh lsp server, but zsh is sufficiently compatible
+        -- with bash that it's mostly fine. It seems like this is generally what people do.
+        -- bqls = {}, -- BigQuery SQL
+        -- cmake = {}, -- cmake
+        -- contextive = {}, -- "Contextive allows you to define terms in a central file and provides auto-completion suggestions and hover panels for these terms wherever they're used".
+        -- copilot = {}, -- for GitHub copilot integration
+        -- html = {},
+        -- jinja_lsp = {}, -- for Jinja SQL templating (I think)
+        -- -- maybe want a LaTex LSP?
+        -- markdown_oxide = {}, -- "Editor Agnostic PKM: you bring the text editor and we bring the PKM. Inspired by and compatible with Obsidian."
+        -- nushell = {}, -- In case I decide to start using nushell
+        -- postgres_lsp = {}, -- "A collection of language tools and a Language Server Protocol (LSP) implementation for Postgres, focusing on developer experience and reliable SQL tooling".
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
@@ -219,7 +242,6 @@ return {
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
-        --
 
         lua_ls = {
           -- cmd = { ... },
