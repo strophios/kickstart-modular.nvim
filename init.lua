@@ -105,5 +105,25 @@ require 'lazy-bootstrap'
 -- [[ Configure and install plugins ]]
 require 'lazy-plugins'
 
+-- [[ Enable LSPs ]]
+vim.lsp.enable {
+  'bashls', -- For if I'm doing bash scripting (and not using nushell)
+  -- Note that this is not a zsh lsp server, but zsh is sufficiently compatible
+  -- with bash that it's mostly fine. It seems like this is generally what people do.
+  'clangd', -- C and C++ LSP (I think C++ as well)
+  'lua_ls', -- Lua LSP
+  'r_language_server',
+  'ruff', -- Python linter and formatter (by Astral, of uv)
+  'ty', -- Python LSP by Astral (of uv and ruff)
+}
+
+-- TODO: A place for config plans (maybe make this its own file):
+--  - Otter.nvim and iron.nvim or vim-slime
+--  - Potential cleanup of LSP implementation.
+--  - New keybinds for autocompletion stuff; somewhere I saw someone using C-j and C-k for next/previous and tab for accept,
+--    which seems maybe more intuitive (and ergonomic) than C-n and C-p, even if it does lose the "a key does one thing" of
+--    using C-y for accepting.
+--
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
