@@ -63,6 +63,8 @@ require('lazy').setup({
   -- [[ Devdocs ]]
   require 'custom.plugins.devdocs',
 
+  require 'custom.plugins.iron',
+
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
