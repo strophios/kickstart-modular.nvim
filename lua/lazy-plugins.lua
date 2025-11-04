@@ -50,6 +50,8 @@ require('lazy').setup({
 
   'nvim-treesitter/nvim-treesitter-context',
 
+  require 'custom.plugins.buffer_manager',
+
   -- [[ Color Schemes ]]
   -- Uncomment out *one* of the following line
   -- Alternatively, can set enabled = false for the ones I'm not using

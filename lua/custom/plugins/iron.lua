@@ -4,6 +4,7 @@ return {
     'Vigemus/iron.nvim',
     config = function()
       local iron = require 'iron.core'
+      local common = require 'iron.fts.common'
       iron.setup {
         config = {
           -- Whether a repl should be discarded or not
@@ -20,7 +21,7 @@ return {
             },
             python = {
               command = { 'python3' }, -- or { "ipython", "--no-autoindent" }
-              format = iron.fts.common.bracketed_paste_python,
+              format = common.bracketed_paste_python,
               block_dividers = { '# %%', '#%%' },
               env = { PYTHON_BASIC_REPL = '1' }, --this is needed for python3.13 and up.
             },

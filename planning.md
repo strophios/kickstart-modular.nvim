@@ -28,16 +28,14 @@ The only concern presently is that this version may crash/have problems if we tr
     - More selection groups (i.e., custom queries) for treesitter, allowing me to, e.g., select the full text of an if/then statement so I can easily send it to the REPL. 
     - Maybe add back the in-line LSP corrections/warnings. 
     - Consider alternative and/or additional keymaps for LSP and treesitter stuff (e.g., for the custom queries named above). 
-- Could setup custom Neotree keymaps and display options; e.g., so it's not a constant sidebar on the left, but rather a floating window we can pull into focus. 
 - Additional plugins: 
     - for viewing the current doc as an outline
     - for code/section folding
     - for session management (maybe `neovim-session-manager`)
-- Maybe test out alternate keymaps for autocompletion. Specifically, I've seen at least one person use <C-j>/<C-k> for next/previous and then keeping <TAB> for select. This seems maybe more intuitive, since it further leverages the default vim-motions keymaps. 
-    - Would this create problems by overlapping with the window/pane switching shortcuts? Hopefully not, since next/previous should be context specific, ideally. 
-    - Also, note that `telescope.nvim` currently uses <C-n>/<C-p> for next/previous within its pickers. So that's worth thinking about. 
+- `telescope.nvim` currently uses <C-n>/<C-p> for next/previous within its pickers. I may want to change this to match my new <C-j>/<C-k> maps for autocompletion. 
 - Add `otter.nvim` and get an integrated writing+coding experience up and running (ideally for both Rmarkdown and quarto). 
 - Eventually, I think I want to consolidate and rewrite the config from the ground up, with the goal of removing all of the organization, cruft, and boilerplate that I am no longer using, and turning it into a config that is sensibly organized and built from the start to match where I want it to go. This includes stuff like dropping the division between `custom/` and `kickstart/` and possibly adding a different kind of organization (e.g., `core/`, `utilities/`, etc.). This would also probably involve a full review and accounting of keymaps and other ergonomic decisions. 
+- Get `devdocs.nvim` fully set up (i.e., so that it has all of the docs available)
 
 
 # Resources
@@ -50,7 +48,10 @@ Example configs:
 - https://github.com/hendrikmi/dotfiles/
 - https://codeberg.org/pjphd/neovim_config/
 
-
+# To-Done
+- Could setup custom Neotree keymaps and display options; e.g., so it's not a constant sidebar on the left, but rather a floating window we can pull into focus. 
+- Easy buffer switching via `buffer-manager.nvim` and some new keymaps. 
+- Maybe test out alternate keymaps for autocompletion. Specifically, I've seen at least one person use <C-j>/<C-k> for next/previous and then keeping <TAB> for select. This seems maybe more intuitive, since it further leverages the default vim-motions keymaps. 
 
 
 

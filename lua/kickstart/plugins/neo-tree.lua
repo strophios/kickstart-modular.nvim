@@ -11,7 +11,8 @@ return {
   },
   lazy = false,
   keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    { '\\', ':Neotree reveal position=float<CR>', desc = 'NeoTree reveal', silent = true },
+    { '<C-\\>', ':Neotree position=float<CR>', desc = 'NeoTree float browser', silent = true },
   },
   opts = {
     filesystem = {

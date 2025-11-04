@@ -57,7 +57,33 @@ return {
         -- <c-k>: Toggle signature help
         --
         -- See :h blink-cmp-config-keymap for defining your own keymap
-        preset = 'default',
+        preset = 'none',
+
+        -- Note: this is a combination of the default preset and custom keymaps.
+        -- I've noted which maps are custom and left (most) of the default maps
+        -- commented out if not being used.
+        ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
+        ['<C-e>'] = { 'hide', 'fallback' },
+        -- ['<C-y>'] = { 'select_and_accept', 'fallback' },
+        -- ['<C-p>'] = { 'select_prev', 'fallback_to_mappings' },
+        -- ['<C-n>'] = { 'select_next', 'fallback_to_mappings' },
+
+        -- Custom maps for selection, leveraging hjkl intuitions
+        ['<C-k>'] = { 'select_prev' },
+        ['<C-j>'] = { 'select_next' },
+        ['<C-l>'] = { 'snippet_forward', 'select_and_accept', 'fallback' },
+        ['<C-h>'] = { 'snippet_backward', 'select_and_accept', 'fallback' },
+        ['<CR>'] = { 'select_and_accept', 'fallback' },
+
+        ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
+        ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
+
+        ['<Tab>'] = { 'snippet_forward', 'fallback' },
+        ['<S-Tab>'] = { 'snippet_backward', 'fallback' },
+
+        ['<C-s>'] = { 'show_signature', 'hide_signature', 'fallback' },
+        -- Default preset: C-k; originally I wanted to change this to C-K (note case), but apparently terminal emulators
+        -- don't differentiate between C-letter and C-LETTER, irritatingly.
 
         -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
