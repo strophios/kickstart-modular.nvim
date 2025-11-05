@@ -117,10 +117,6 @@ vim.lsp.enable {
   'ty', -- Python LSP by Astral (of uv and ruff)
 }
 
-vim.lsp.inlay_hint.enable(true) -- I think this does what I want (i.e., enable inlay hints universally)
--- I've seen other configs (including kickstart) use a function to check whether the client has this capability
--- first, so it's possible just doing it globally like this will cause problems, but I'm giving it a shot for now.
-
 -- TODO: A place for config plans (maybe make this its own file):
 --  - Otter.nvim and iron.nvim or vim-slime
 --  - Potential cleanup of LSP implementation.

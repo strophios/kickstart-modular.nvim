@@ -88,4 +88,15 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+-- Setup options for displaying diagnostics
+-- Desired behavior is to show diagnostic messages on virtual lines (not as virtual text on the same line),
+-- but only on the line where the cursor currently is. So we can use the signs column on the left to see where
+-- errors and warnings are, but only see the details (and therefore have them cluttering up the document) when
+-- I'm on the line to look at them.
+vim.diagnostic.config { virtual_lines = { current_line = true } } -- I *think* this does what I want, but it's possible it's not quite right.
+
+-- NOTE: Potential alternative would be to keep showing all diagnostics in your immediate surroundings, so if
+-- you have to navigate a few lines away to fix something, the message doesn't go away while you do it. Could
+-- conceivably do this using Treesitter? Like, display diagnostics within the immediate scope or something.
+
 -- vim: ts=2 sts=2 sw=2 et
