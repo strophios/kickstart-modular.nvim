@@ -73,7 +73,7 @@ return {
         ['<C-j>'] = { 'select_next' },
         ['<C-l>'] = { 'snippet_forward', 'select_and_accept', 'fallback' },
         ['<C-h>'] = { 'snippet_backward', 'select_and_accept', 'fallback' },
-        ['<CR>'] = { 'select_and_accept', 'fallback' },
+        ['<C-CR>'] = { 'select_and_accept', 'fallback' }, -- Control-Enter instead of just enter, so we don't get an autocomplete when we want a newline, or vice versa
 
         ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
         ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
@@ -88,6 +88,16 @@ return {
         -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
       },
+
+      -- By default, blink copies the behavior of base NeoVim in command mode, including keymaps.
+      -- Setting `preset = "inherit"` makes it instead use the same keymaps we defined above.
+      -- see here: https://cmp.saghen.dev/modes/cmdline.html
+      cmdline = {
+        enabled = true,
+        keymap = { preset = 'inherit' },
+      },
+
+      -- term = { } -- NOTE: May also have different behavior in terminal mode, so I may want to update this later.
 
       appearance = {
         -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
