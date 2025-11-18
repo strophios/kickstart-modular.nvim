@@ -4,22 +4,22 @@ return {
   cmd = 'SessionManager',
   keys = {
     {
-      '<leader>WS',
+      '<leader>wS',
       '<cmd>SessionManager save_current_session<cr>',
       desc = '[W]orkspace: [S]ave current session (and modified buffers)',
     },
     {
-      '<leader>Ws',
+      '<leader>ws',
       '<cmd>SessionManager! save_current_session<cr>',
       desc = '[W]orkspace: [s]ave current session (not modified buffers)',
     },
     {
-      '<leader>WL',
+      '<leader>wL',
       '<cmd>SessionManager load_session<cr>',
       desc = '[W]orkspace: [L]oad session (save modified buffers)',
     },
     {
-      '<leader>Wl',
+      '<leader>wl',
       '<cmd>SessionManager! load_session<cr>',
       desc = "[W]orkspace: [l]oad session (don't save modified buffers)",
     },

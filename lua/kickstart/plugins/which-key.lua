@@ -59,8 +59,12 @@ return {
 
       -- Document existing key chains
       spec = {
+        { '<leader>b', group = '[B]uffer' },
+        { '<leader>d', group = '[D]ocument outline' },
+        { '<leader>r', group = '[R]EPL' },
         { '<leader>s', group = '[S]earch' },
         { '<leader>t', group = '[T]oggle' },
+        { '<leader>w', group = '[W]orkspaces' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       },
     },
