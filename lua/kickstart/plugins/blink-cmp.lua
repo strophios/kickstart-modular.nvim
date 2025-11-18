@@ -93,8 +93,8 @@ return {
       -- Setting `preset = "inherit"` makes it instead use the same keymaps we defined above.
       -- see here: https://cmp.saghen.dev/modes/cmdline.html
       cmdline = {
-        enabled = true,
         keymap = { preset = 'inherit' },
+        completion = { menu = { auto_show = true } },
       },
 
       -- term = { } -- NOTE: May also have different behavior in terminal mode, so I may want to update this later.
